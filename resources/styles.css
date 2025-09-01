@@ -7,20 +7,30 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 body {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     color: black;
     background-color: white;
     font-family: Tahoma, sans-serif;
 }
-
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+.logo-container {
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: yellow;
+}
 main {
-    max-width: 400px;
     margin: 0 auto;
+    margin-top: 30px;
 }
 h1 {
     text-align: center;
 }
-
 img,
 picture,
 video {
@@ -28,6 +38,15 @@ video {
     display: block;
     margin: 0 auto;
 }
-q {
-    font-size: 12px;
+.center {
+    text-align: center;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+li {
+    margin: 0;
+    padding: 0;
 }
