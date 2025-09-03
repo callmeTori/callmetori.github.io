@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Random Color Generator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+main {  
+    margin: 15px 0 25px;
+    font-size: 1.2rem;
+}
+button {
+    margin: 12px 0;
+    padding: 12px;
+}
+section {
+    margin: 24px;
+}
+div {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+}
+    </style>
+</head>
+<body>
+    
+<main>
+    <div>
+    <h1>Random Color Generator</h1>
+    <section>
+    <p><strong>Hex Code:</strong> <span id="hex-text-code">#FF91AF</span></p>
+    </section>
+    <button class="btn" id="btn">Generate New Color</button>
+    </div>
+</main>
+<script>
+const body = document.querySelector("body");
+const bgHexCodeDisplay = document.querySelector("#hex-text-code");
+const btn = document.querySelector("#btn");
+
+function getRandomColor(){
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color; 
+}
+function changeBackgroundColor() {
+  const color = getRandomColor();
+
+  bgHexCodeDisplay.innerText = color;
+  body.style.backgroundColor = color;
+}
+btn.onclick = changeBackgroundColor;
+    
+</script>
+</body>
+</html>
