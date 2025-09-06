@@ -18,7 +18,13 @@ body {
 }
 main {  
     margin: 15px 0 25px;
-    font-size: 1.2rem;
+    font-size: 1em;
+}
+h1 {
+    font-size: 1.5em;
+}
+main p {
+    font-size: 2em;
 }
 button {
     margin: 12px 0;
@@ -38,10 +44,14 @@ div {
     color: white;
     border-radius: 12px;
 }
+#return-link a {
+    background-color: hsla(0, 100%, 99%, 0.705);
+    padding: 12px;
+    border-radius: 12px;
+}
     </style>
 </head>
 <body>
-    
 <main>
     <div>
     <h1>Random Color Generator</h1>
@@ -51,6 +61,7 @@ div {
     <button class="btn" id="btn">Generate New Color</button>
     </div>
 </main>
+    <p id="return-link"><a href="callmetori.github.io">&#8617; Back to callmetori.github.io</a></p>
 <script>
 const body = document.querySelector("body");
 const bgHexCodeDisplay = document.querySelector("#hex-text-code");
