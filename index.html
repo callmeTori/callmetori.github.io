@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="dark-mode-btn" onclick="darkModeToggle()">Toggle Dark Mode</button>
     <header>
         <div class="logo-container"><img src="resources/assets/tori-face-icon.png" style="height: 100px;" alt="" >
         </div>
         <h1>callmeTori</h1>
     </header>
+        
     <main class="center">
         <h2>Projects</h2>
         <div class="section-container">
@@ -60,5 +62,11 @@
             </p>
             </div>
     </main>
+    <script>
+        function darkModeToggle() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>

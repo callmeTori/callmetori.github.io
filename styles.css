@@ -8,6 +8,23 @@ body {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
+    background-color: white !important;
+    color: black !important;
+}
+.dark-mode {
+    background-color: black  !important;
+    color: white  !important;
+}
+.dark-mode .project-card {
+    color: black;
+}
+.dark-mode #dark-mode-btn {
+
+}
+#dark-mode-btn {
+    margin: 12px;
+    padding: 14px;
+    border-radius: 24px;
 }
 header {
     display: flex;
@@ -50,7 +67,7 @@ li {
 .project-card {
     padding: 16px;
     width: 45% !important;
-    background-color: #FF91AF80;
+    background-color: #FF91AF;
     border-radius: 24px;
 }
 
