@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <style>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #030303;
+    --white: #efefef;
+    --pink: #FF91AF;
+    --green: #195f1e;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    font-family: sans-serif
+}
+
+h1 {
+    margin: 15px 0 20px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    font-size: 1.2rem;
+}
+
+.score {
+    font-weight: 500;
+}
+
+.results-container {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+#winner-msg {
+    margin-top: 25px;
+}
+
+#reset-game-btn {
+    display: none;
+    margin: 20px auto;
+}
+
+.btn {
+    cursor: pointer;
+    width: 100px;
+    margin: 10px;
+    padding: 6px;
+    color: var(--black);
+    background-color: var(--black);
+    background-image: linear-gradient(#ffcdda, #efefef);
+    border-color: gray;
+    border-width: 2px;
+}
+
+.btn-container button {
+    border-radius: 16px;
+}
+
+.btn:hover {
+    background-image: linear-gradient(#efefef, #ffcdda);
+}
+
+.btn:active {
+    background-image: linear-gradient(#efefef, #FF91AF);
+    font-weight: bold;
+}
+
+#reset-game-btn {
+    min-width: 200px;
+    border-radius: 10px;
+
+}
+.rules {
+    padding: 10px 0;
+    margin: auto;
+    border: 2px solid var(--pink);
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.rules ul {
+    list-style-type: none;
+}
+
+.rules p {
+    margin: 10px 0;
+}
+
+@media (min-width: 600px) {
+  .rules-container {
+    width: 60%;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <main>
+        <div class="score-container">
+            Player: <span class="score" id="player-score">0</span>
+            Computer: <span class="score" id="computer-score">0</span>
+        </div>
+
+        <section class="options-container">
+            <h2>Choose your weapon:</h2>
+            <div class="btn-container">
+                <button class="btn" id="rock-btn">Rock</button>
+                <button class="btn" id="paper-btn">Paper</button>
+                <button class="btn" id="scissors-btn">Scissors</button>
+            </div>
+        </section>
+
+        <div class="results-container">
+            <p id="results-msg"></p>
+            <p id="winner-msg"></p>
+            <button class="btn" id="reset-game-btn">Play another round?</button>
+        </div>
+
+        <details class="rules">
+            <summary>Game Rules</summary>
+            <p>You will be playing against the computer.</p>
+            <p>You can choose between Rock, Paper, and Scissors.</p>
+            <p>The first one to three points wins.</p>
+            <p>Here are the rules to getting a point in the game:</p>
+            <ul>
+            <li>Rock beats Scissors</li>
+            <li>Scissors beats Paper</li>
+            <li>Paper beats Rock</li>
+            </ul>
+            <p>
+            If the player and computer choose the same option (Ex. Paper and
+            Paper), then no one gets the point.
+            </p>
+        </details>
+    </main>
+    <script>
+function getRandomComputerResult() {
+    const options = ["Rock", "Paper", "Scissors"];
+    const randomCompResult = Math.floor(Math.random() * options.length);
+    return options[randomCompResult];
+}
+
+let playerScore = 0;
+let computerScore = 0;
+
+function hasPlayerWonTheRound(player, computer) {
+    return player === "Rock" && computer === "Scissors" ? true
+    : player === "Scissors" && computer === "Paper" ? true
+    : player === "Paper" && computer === "Rock" ? true
+    : false;
+}
+function getRoundResults(userOption) {
+  const computerResult = getRandomComputerResult();
+
+  // player won the round
+  if (hasPlayerWonTheRound(userOption, computerResult)) {
+    // update player score
+      playerScore++;
+    // return results message
+      return `Player wins! ${userOption} beats ${computerResult}`
+  // player and computer tie
+  } else if (userOption === computerResult) {
+    // return results message
+      return `It's a tie! Both chose ${userOption}`;
+  } else {
+    // update computer score
+      computerScore++;
+    // return results message
+      return `Computer wins! ${computerResult} beats ${userOption}`
+  }
+}
+const playerScoreSpanElement = document.getElementById("player-score");
+const computerScoreSpanElement = document.getElementById("computer-score");
+const roundResultsMsg = document.getElementById("results-msg");
+const winnerMsgElement = document.getElementById("winner-msg");
+const optionsContainer = document.querySelector(".options-container");
+const resetGameBtn = document.getElementById("reset-game-btn");
+
+
+function showResults(userOption) {
+    roundResultsMsg.innerText = getRoundResults(userOption);
+    computerScoreSpanElement.innerText = computerScore;
+    playerScoreSpanElement.innerText = playerScore;
+
+    if(playerScore === 3 || computerScore === 3) {
+        winnerMsgElement.innerText = `${playerScore === 3 ? "Player" : "Computer"} has won the game!`;
+
+        resetGameBtn.style.display = "block";
+        optionsContainer.style.display = "none";
+    }
+
+};
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    computerScoreSpanElement.innerText = computerScore;
+    playerScoreSpanElement.innerText = playerScore;
+    resetGameBtn.style.display = "none";
+    optionsContainer.style.display = "block";
+    winnerMsgElement.innerText = ``;
+    roundResultsMsg.innerText = ``;
+
+};
+
+resetGameBtn.addEventListener("click", resetGame);
+
+const rockBtn = document.getElementById("rock-btn");
+const paperBtn = document.getElementById("paper-btn");
+const scissorsBtn = document.getElementById("scissors-btn");
+
+rockBtn.addEventListener("click", function () {
+    showResults("Rock");
+});
+
+paperBtn.addEventListener("click", function () {
+    showResults("Paper");
+});
+
+scissorsBtn.addEventListener("click", function () {
+    showResults("Scissors");
+});
+    </script>
+</body>
+</html>
