@@ -4,6 +4,35 @@
     <title>callmeTori | Github</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+     <!-- <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 600px;
+        }
+        ul {      
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .section-container {
+            margin-top: 24px;
+        }
+        .project-card {
+            background-color: gray;
+            border-radius: 4px;
+            margin-top: 16px;
+        }
+        .dark-mode {
+            background-color: black  !important;
+            color: white  !important;
+        }
+     </style>-->
 </head>
 <body>
     <button id="dark-mode-btn" onclick="darkModeToggle()">Toggle Dark Mode</button>
@@ -57,11 +86,15 @@
             </div>
         <div class="section-container">
             <h3>Code Snippets</h3>
+            <div class="card-container">
+            <div class="project-card">
             <p>
                 <ul style="list-style-type: none;">
                     <li><a href="code-snippets/color-randomizer.html">Random Color Generator</a></li>
                 </ul>
             </p>
+            </div>
+            </div>
             </div>
     </main>
     <script>
