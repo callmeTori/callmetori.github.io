@@ -38,13 +38,7 @@ header {
 .nav-logo-title {
     color: black;
 }
-.dark-mode {
-    background-color: black ;
-    color: white;
-}
-.dark-mode .project-card {
-    color: black;
-}
+
 .hero-landing {
     display: flex;
     flex-direction: column;
@@ -55,14 +49,18 @@ header {
     background-color: white;
 }
 button {
+    font-size: 16px;
     font-weight: 600;
     padding: 8px;
     border-radius: 12px;
     background-color: black ;
     color: white;
 }
+button:hover {
+    cursor: pointer;
+}
 .hero-landing a:link, a:visited {
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
     padding: 8px;
     border-radius: 12px;
@@ -90,10 +88,18 @@ li {
 .center {
     text-align: center;
 }
-/* .section-container {
-    margin: 6vh 0 6vh 0;
-    
-} */
+section {
+    background-color: lightgray;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    padding: 80px 10px;
+    width: 100%;
+
+}
 .card-container {
     display: flex;
     justify-content: space-evenly;
@@ -105,7 +111,59 @@ li {
     background-color: #FF91AF;
     border-radius: 24px;
 }
+/*
 
+.card-container {    
+    width: 1500px;
+    max-width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 32.5px;
+    flex-wrap: wrap;
+}
+.project-card {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 26px 22px;
+    flex: 1 1;
+    background-color: #FF91AF;
+    border-radius: 24px;
+}
+*/
+.dark-mode {
+    background-color: black ;
+    color: white;
+}
+.dark-mode header {
+    background-color: black;
+    color: white;
+}
+.dark-mode section {
+    background-color: black;
+    color: white;
+}
+.dark-mode .nav-logo-title {
+    color: white;
+}
+.dark-mode .hero-landing {
+    background-color: black;
+    color: white;
+}
+.dark-mode button {
+    background-color: white;
+    color: black;
+}
+.dark-mode #hero-button {
+    background-color: white !important;
+    color: black;
+}
+.dark-mode .project-card {
+    color: black;
+}
 /* .project-card ul {
     display: flex;
     justify-content: space-between;
