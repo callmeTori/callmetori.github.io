@@ -1,0 +1,372 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+
+}
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+	display: block;
+    font-family: "Ubuntu", sans-serif;
+
+}
+img, picture, video {
+    max-width: 100%;
+	
+}
+header {
+	position: sticky;
+	top: 0;
+
+}
+header a {
+	color: black;
+	text-decoration: none;
+}
+header li {
+	list-style-type: none;
+	display: inline;
+
+}
+.mobile-nav {
+	display: none;
+}
+/* Logo Container */
+.logo-container {
+	display: flex;
+	align-items: center;
+	float: left;
+	text-transform: uppercase;
+
+}
+main {
+    margin: 0;
+	
+}
+.container {
+	margin: 0;
+	max-width: 100% !important;
+    padding: 32px 24px;
+	
+}
+
+.col-2 .container-headline-text-button {
+	max-width: 100%;
+}
+
+.container-100 {
+	max-width: 100% !important;
+	display: block;
+	margin: 16px auto;
+	text-align: center;
+	background-color: lightgray;
+}
+/* Hero Container */
+#hero {
+    background-color: lightgray;
+	
+}
+
+button {
+	font-size: 1rem;
+	margin: 24px 0 32px 0;
+	padding: 8px;
+	width: 100%;
+	background-color: #303030;
+	border: none;
+
+}
+
+button a {
+	text-decoration: none;
+	color: white;
+
+}
+
+h1 {
+	font-size: 1rem;
+}
+
+footer li {
+	list-style-type: none;
+	display: inline;
+	padding-left: 16px;
+
+}
+/* video */
+video {
+	z-index: 1;
+}
+/* Ubuntu in light weight style */
+.light {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+/* Ubuntu in bold weight style */
+.bold {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+@media only screen and (max-width: 899px) {
+	.logo-container {
+		display: none;
+	}
+	.mobile-nav {
+		margin: 0;
+		padding: 12px 8px;
+		display: flex;
+		justify-content: space-evenly;
+		max-width: 100%;
+		background-color: white;
+	}
+	.desktop-nav {
+		display: none;
+	}
+	.container {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		padding: 0;
+	}
+	.container .col-1 {
+		margin: 0;
+		padding: 0;
+	}
+	.container .col-2 {
+		max-width: 100%;
+		padding-left: 16px;
+	}
+	.col-2 .container-headline-text-button {
+		width: 400px;
+	}
+	#hero h1 {
+		font-size: 2rem;
+		color: #303030;
+	}
+	#hero p {
+		width: 75%;
+		font-weight: 400;
+		line-height: 1.5rem;
+	}
+	#hero button {
+		background-color: gray;
+		width: 100%;
+		max-width: 315px;
+	}
+	#featured-info-card {
+		display: none;
+	}
+	.container-100 {
+		margin: 0 16px;
+		background-color: white;
+	}
+	.container-100 img {
+		display: none;
+	}
+	.container-100 .course-card {
+		background-color: lightgray;
+		margin: 8px auto;
+		padding: 16px 0 24px 16px;
+		text-align: left;
+
+	}
+	.container-100 h3 {
+		padding: 16px auto 24px 16px;
+	}
+	.container-100 .text-container {
+		display: none;
+	}
+
+}
+@media only screen and (min-width: 900px) {
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 24px;
+		width: 100%;
+		height: 64px;
+		z-index: 10;
+		background-color: white;
+
+	}
+	header li {
+		font-size: 16px;
+		font-weight: 100;
+		padding-left: 12px;
+	}
+	footer {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		padding: 0 24px;
+		
+	}
+	.container {
+		max-width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.col-1 {
+		flex: 2 60%;
+	}
+	
+	.col-2 {
+		flex: 1 40%;		
+		margin-left: 40px;
+		border: 1px solid lightgray;
+
+	}
+	#hero .container-headline-text-button {
+
+	}
+	#hero h1 {
+		color: #303030;
+	}
+	#hero p {
+		font-weight: 400;
+		line-height: 1.5rem;
+		max-width: 310px;
+	}
+	#hero button {
+		width: 100%;
+		max-width: 310px;
+	}
+	.col-2 .container-information-grid {
+		height: 100%;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+	}
+	.information-card {
+		max-width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 12px;
+		border: 1px solid lightgray;
+
+	}
+	.information-card .container-image {
+		flex: 1 35%;
+	}
+	.container-image img {
+		
+	}
+	.container-text-date-link {
+		flex: 2 65%;
+		padding: 0 24px;
+	} 
+	
+	.container-text-date-link a {
+		text-decoration: none;
+	}
+	
+	#guest-lecture {
+		background-color: lightgray;
+	}
+	
+	.container-100 {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+		padding: 32px 72px;
+		text-align: center;
+		background-color: lightgray;
+	}
+
+	.grid-courses {
+		display: flex;
+		justify-content: space-evenly;
+		flex-flow: row wrap;
+		row-gap: 32px;
+	}
+	
+	.course-card {
+		background-color: white;
+		width: 30%;
+	}
+	
+	.course-card .text-container {
+		
+	}
+}
+/*
+
+OOF BOX
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: white;
+
+}
+.logo-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    float: left;
+    text-transform: uppercase;
+	height: 50%;
+}
+header ul {
+	float: right;
+}
+header li {
+	list-style-type: none;
+  	display: inline;
+    padding: 16px;
+
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 24px;
+    min-width: 1000px;
+
+}
+#hero {
+    background-color: gray;
+}
+.left {
+    flex-basis: 60%;
+}
+
+.left img {
+    width: 100%;
+}
+
+.right {
+    flex-basis: 40%;
+}
+
+.right div {
+    padding-left: 24px;
+}
+@media screen and (max-width: 480px) {
+    .logo-container span {
+        display: none;
+    }
+}
+    */
