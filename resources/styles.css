@@ -1,56 +1,192 @@
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
 body {
+    font-family: Tahoma, sans-serif;
     width: 100%;
-    max-width: 500px;
     margin: 0 auto;
     background-color: white;
     color: black;
-    font-family: Tahoma, sans-serif;
-}
-.dark-mode {
-    background-color: black  !important;
-    color: white  !important;
 }
 header {
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    padding-inline: 15% 15.42%;
+}
+.nav-1 {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    font-weight: 600;
 }
 .logo-container {
-    height: 100px;
-    width: 100px;
-    border-radius: 25px;
-    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
+    background-color: #FF91AF;
 }
-main {
-    margin: 0 auto;
-    margin-top: 30px;
+.nav-logo-title {
+    color: black;
 }
-h1 {
+
+.hero-landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 130px;
+    background-color: white;
+}
+button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: black ;
+    color: white;
+}
+button:hover {
+    cursor: pointer;
+}
+.hero-landing a:link, a:visited {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 12px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+h2 {
+    margin: 24px 0 0 0;
+}
+h3 {
+    margin: 12px 0 12px 0;
 }
 img,
 picture,
 video {
     max-width: 100%;
-    display: block;
-    margin: 0 auto;
+}
+li {
+    padding: 1em;
+    list-style-type: none;
 }
 .center {
     text-align: center;
 }
-ul {
+section {
+    background-color: lightgray;
+    padding: 40px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    padding: 80px 10px;
+    width: 100%;
+
+}
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.project-card {
+    padding: 16px;
+    width: 45% !important;
+    background-color: #FF91AF;
+    border-radius: 24px;
+}
+/*
+
+.card-container {    
+    width: 1500px;
+    max-width: 96%;
     display: flex;
     justify-content: space-between;
-    list-style-type: none;
+    align-items: stretch;
+    gap: 32.5px;
+    flex-wrap: wrap;
 }
-li {
-    margin: 0;
-    padding: 0;
+.project-card {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    padding: 26px 22px;
+    flex: 1 1;
+    background-color: #FF91AF;
+    border-radius: 24px;
 }
+*/
+.dark-mode {
+    background-color: black ;
+    color: white;
+}
+.dark-mode header {
+    background-color: black;
+    color: white;
+}
+.dark-mode section {
+    background-color: black;
+    color: white;
+}
+.dark-mode .nav-logo-title {
+    color: white;
+}
+.dark-mode .hero-landing {
+    background-color: black;
+    color: white;
+}
+.dark-mode button {
+    background-color: white;
+    color: black;
+}
+.dark-mode #hero-button {
+    background-color: white !important;
+    color: black;
+}
+.dark-mode .project-card {
+    color: black;
+}
+/* .project-card ul {
+    display: flex;
+    justify-content: space-between;
+}
+/*
+@media screen and (min-width: 600px) {
+    body {
+        color: black;
+        background-color: white;
+    }
+    .flex-wrapper {
+        display: flex;
+    }
+
+    .col-1 {
+        flex: 1;
+        padding: 12px;
+    }
+
+    .col-2 {
+        flex: 2;
+        padding: 12px;
+    }
+    
+}
+    */
