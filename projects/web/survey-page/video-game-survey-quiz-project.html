@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Video Game Survey</title>
+<link href="survey-style1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+<header>
+	<h1 id="title">Video Game Survey</h1>
+	<p id="description">This survey aims to collect insights about video game preferences.</p>
+	</header>
+	<form id="survey-form">
+	  <fieldset>
+		<label for="name-label">Username<input id="name-label" type="text" placeholder="360noscope" required /></label>
+		<label for="email-label">Email<input id="email-label" type="email" placeholder="example@example.com" required /></label>
+		<label for="number-label">Age (Optional)<input id="number-label" type="number" max="120" min="1" step="1" value="1" placeholder="50" required /></label>
+		</fieldset>
+	  <fieldset required>
+	    <label for="radio">What type of console do you use to play games?
+        <label for="desktop-PC"><input id="desktop-PC" type="radio" name="video-game-console" class="inline" checked /> Desktop PC</label>
+        <label for="game-console"><input id="game-console" type="radio" name="video-game-console" class="inline" /> Console (Playstation, XBOX, Nintendo Switch HDMI in, etc.)</label>
+		<label for="portable-console"><input id="portable-console" type="radio" name="video-game-console" class="inline" /> Portable game console (Steam deck, Nintendo Switch Portable and other similar portable game consoles, etc.)</label>
+		  <label for="mobile-device"><input id="mobile-device" type="radio" name="video-game-console" class="inline" /> Mobile device</label>
+		</label>
+		</fieldset>
+	  <fieldset required>
+		 <label for="dropdown">In the past 12 months, what video game genre have you played the most? If your favorite isn't on the list, drop me a comment at the end of the survey.
+          <select id="dropdown" name="dropdown">
+            <option value="">(select one)</option>
+            <option value="1">Action Adventure</option>
+            <option value="2">Fighting (Arcade or Side scroller)</option>
+            <option value="3">First-person Shooter</option>
+			<option value="4">Strategy</option>
+            <option value="5">Simulation</option>
+			<option value="6">Puzzles</option>
+			<option value="7">Role-playing</option>
+            <option value="8">Sports</option>
+			<option value="9">Racing</option>
+            <option value="10">Other</option>
+          		</select>
+        	</label>
+		</fieldset>
+	  <fieldset class="checkbox" required>
+		 <label for="checkbox">What controller types do you use to play video games?
+		 <div class="checkbox_group">
+			<label for="method1" ><input type="checkbox" id="method1" name="method1" value="handheld gamepad" /> Handheld Gamepad </label>
+            <label for="method2"><input type="checkbox" id="method2" name="method2" value="wasd" /> Keyboard &amp; mouse </label>
+            <label for="method3"><input type="checkbox" id="method3" name="method3" value="arcade controller" /> Arcade Controller </label>
+            <label for="method4"><input type="checkbox" id="method4" name="method4" value="Other" />Other</label>
+			 </div>
+			 </label>
+		</fieldset>	
+		<fieldset>
+		<label for="comments">Any additional comments?
+          <textarea id="comments" name="comments" rows="3" cols="30" placeholder="How could you forget about..."></textarea>
+        </label>
+			</fieldset>
+		<input type="submit" value="Submit" />
+	  </form>
+	</div>
+	<footer>
+	<p>Created by minnooow for the freecodecamp Responsive Web Design Course.</p>
+  </footer>
+  </body>
+</html>

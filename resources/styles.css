@@ -4,13 +4,22 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Tahoma, sans-serif;
+    font-family: sans-serif;
     width: 100%;
     margin: 0 auto;
     background-color: white;
     color: black;
 }
 header {
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    padding-inline: 15% 15.42%;
+}
+footer {
     display: flex;    
     justify-content: space-between;
     align-items: center;
@@ -38,7 +47,6 @@ header {
 .nav-logo-title {
     color: black;
 }
-
 .hero-landing {
     display: flex;
     flex-direction: column;
@@ -49,21 +57,22 @@ header {
     background-color: white;
 }
 button {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px;
+    font-size: 12px;
+    padding: 14px;
     border-radius: 12px;
-    background-color: black ;
+    border-width: 0;
+    font-weight: normal;
+    background-color: black;
     color: white;
 }
 button:hover {
     cursor: pointer;
 }
 .hero-landing a:link, a:visited {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px;
+    font-size: 12px;
+    padding: 14px;
     border-radius: 12px;
+    font-weight: normal;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -98,7 +107,6 @@ section {
     gap: 65px;
     padding: 80px 10px;
     width: 100%;
-
 }
 .card-container {
     display: flex;
@@ -110,6 +118,17 @@ section {
     width: 45% !important;
     background-color: #FF91AF;
     border-radius: 24px;
+}
+.pink-bg {
+    background-color: #FF91AF;
+}
+.gray-bg {
+    background-color:gray;
+
+}
+.black-bg {
+    background-color: black;
+    color: white;
 }
 /*
 
