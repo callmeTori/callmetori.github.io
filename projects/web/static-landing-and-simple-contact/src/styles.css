@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+}
+
+.container {
+    max-width: 720px;
+	margin: 1em auto;
+
+}
+
+form {
+    width: 80vw;
+    max-width: 80%;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+label {
+    display: block;
+    margin: 2.25rem 0;
+}
+input[type="checkbox"] {
+   width: unset;
+   margin: 0 0.5em 0 0;
+   vertical-align: middle;
+   display: inline; 
+}
+
+input,
+textarea,
+select, button {
+  margin: 10px 0 0 0;
+  padding: 4px;
+  width: 100%;
+  max-height: 3em;
+  border-radius: 8px;
+
+}
+
+button {
+  padding: 10px;
+  background-color: pink;
+}
+
+button:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
