@@ -124,17 +124,25 @@ section {
     padding: 10px;
 }
 .category-box {
+    max-width: 1200px;
+	margin: 1em auto;
     padding: 30px 10px;
     border-bottom: 1px solid black;
 }
 .card-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    /* display: flex;
+    justify-content: space-evenly; */
+    max-width: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 600px) {
+  .card-container { grid-template-columns: repeat(2, 1fr); }
 }
 .project-card {
     padding: 16px;
-    width: 45% !important;
     background-color: #FF91AF;
     border-radius: 24px;
 }
