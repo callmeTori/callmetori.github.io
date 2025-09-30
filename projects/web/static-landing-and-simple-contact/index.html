@@ -7,51 +7,68 @@
     <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
-<nav>
+<nav class="container padding-16">
     <div id="logo-container">
 
     </div>
     <div id="nav-links">
-        <a href="#">Stories</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#projects" class="padding-16">Projects</a>
+        <a href="#about" class="padding-16">About</a>
+        <a href="#contact" class="padding-16">Contact</a>
     </div>
 </nav>
-<header id="hero">
-    <img>
+<header class="text-center" id="hero">
     <h1>Sally Might</h1>
 </header>
 <main>
-    <section id="stories">
+    <section class="container padding-16" id="projects">
         <h2>Projects</h2>
-        <div class="card-container">
-            <div class="card">
+        <div class="card-container padding-16">
+            <div class="card padding-16">
                 <img>
-                <h3>Project name</h3>
-                <span class="title">Tag 1</span>
-                <p>
+                <h3>Project 1</h3>
+                <span class="card-tags">Tag 2</span>
+                <p class="card-text">
                     Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
                 </p>
-                <button>Read</button>
+                <button class="card-button">Read more</button>
             </div>
-            <div class="card">
+            <div class="card padding-16">
                 <img>
-                <h3>Project name</h3>
-                <span class="title">Tag 2</span>
-                <p>
+                <h3 class="card-headline">Project 2</h3>
+                <span class="card-tags">Tag 2</span>
+                <p class="card-text">
                     Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
                 </p>
-                <button>Read</button>
+                <button class="card-button">Read more</button>
+            </div>
+            <div class="card padding-16">
+                <img>
+                <h3 class="card-headline">Project 3</h3>
+                <span class="card-tags">Tag 2</span>
+                <p class="card-text">
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+                <button class="card-button">Read more</button>
+            </div>
+            <div class="card padding-16">
+                <img>
+                <h3 class="card-headline">Project 4</h3>
+                <span class="card-tags">Tag 2</span>
+                <p class="card-text">
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+                <button class="card-button">Read more</button>
             </div>
         </div>
     </section>
-    <section id="about">
+    <section class="container padding-16" id="about">
         <h2>About</h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </p>
     </section>
-    <section id="subscribe">
+    <section  class="container padding-16" id="contact">
         <h2>Contact</h2>
         <p>Fill out the form below to get in touch with us about your next project.</p>
         <div class="container">
@@ -72,7 +89,7 @@
         <img>
     </section>
 </main>
-<footer>
+<footer class="container padding-16">
     <p>Crafted by callmeTori</p>
 </footer>
 </body>
