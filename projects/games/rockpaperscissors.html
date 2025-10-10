@@ -31,6 +31,34 @@ h1 {
     margin: 15px 0 20px;
 }
 
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    width: min(100vw, 450px);
+    min-height: 100px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: var(--green);
+    box-shadow: 0 6px 6px white;
+
+}
+
 .score-container {
     display: flex;
     justify-content: space-around;
@@ -111,8 +139,9 @@ h1 {
     </style>
 </head>
 <body>
-    <h1>Rock, Paper, Scissors</h1>
     <main>
+    <div class="box">
+    <h1>Rock, Paper, Scissors</h1>
         <div class="score-container">
             Player: <span class="score" id="player-score">0</span>
             Computer: <span class="score" id="computer-score">0</span>
@@ -149,6 +178,7 @@ h1 {
             Paper), then no one gets the point.
             </p>
         </details>
+    </div>
     </main>
     <script>
 function getRandomComputerResult() {
