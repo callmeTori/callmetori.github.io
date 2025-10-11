@@ -10,13 +10,88 @@ const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
-const taskData = [] //this array stores all the tasks and the associated data (title, due date, and description)
+const taskData = JSON.parse(localStorage.getItem("data")) || []; //this array stores all the tasks and the associated data (title, due date, and description)
 
 let currentTask = {
   
 } // this variable tracks the state when editing and discarding tasks
 
+const removeSpecialChars = (val) => {
+  return val.trim().replace(/[^A-Za-z0-9\-\s]/g, '')
+}
+
+const addOrUpdateTask = () => {
+   if(!titleInput.value.trim()){
+    alert("Please provide a title");
+    return;
+  }
+
+const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id);
+
+const taskObj = {
+    id: `${titleInput.value.toLowerCase().split(" ").join("-")}-${Date.now()}`,
+    title: titleInput.value,
+    date: dateInput.value,
+    description: descriptionInput.value,
+  };
+
+  if (dataArrIndex === -1) {
+    taskData.unshift(taskObj);
+  } else {
+    taskData[dataArrIndex] = taskObj;
+  }
+
+  localStorage.setItem("data", JSON.stringify(taskData));
+  updateTaskContainer()
+  reset()
+};
+
+const updateTaskContainer = () => {
+  tasksContainer.innerHTML = "";
+
+  taskData.forEach(
+    ({ id, title, date, description }) => {
+        (tasksContainer.innerHTML += `
+        <div class="task" id="${id}">
+          <p><strong>Title:</strong> ${title}</p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <button onclick="editTask(this)" type="button" class="btn">Edit</button>
+          <button onclick="deleteTask(this)" type="button" class="btn">Delete</button> 
+        </div>
+      `)
+    }
+  );
+};
+
+const deleteTask = (buttonEl) => {
+  const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id
+  );
+
+  buttonEl.parentElement.remove();
+  taskData.splice(dataArrIndex, 1);
+  localStorage.setItem("data", JSON.stringify(taskData));
+}
+
+const editTask = (buttonEl) => {
+    const dataArrIndex = taskData.findIndex(
+    (item) => item.id === buttonEl.parentElement.id
+  );
+
+  currentTask = taskData[dataArrIndex];
+
+  titleInput.value = currentTask.title;
+  dateInput.value = currentTask.date;
+  descriptionInput.value = currentTask.description;
+
+  addOrUpdateTaskBtn.innerText = "Update Task";
+
+  taskForm.classList.toggle("hidden");  
+}
+
 const reset = () => {
+  addOrUpdateTaskBtn.innerText = "Add Task";
   titleInput.value = "";
   dateInput.value = "";
   descriptionInput.value = "";
@@ -24,52 +99,34 @@ const reset = () => {
   currentTask = {}
 } // clears the input fields
 
-openTaskFormBtn.addEventListener("click", () => {
-  taskForm.classList.toggle("hidden")
-}); // when the button is clicked, the task form is displayed 
+if (taskData.length) {
+  updateTaskContainer();
+}
 
-closeTaskFormBtn.addEventListener("click", () => {  
-  const checkFormInputForValues = titleInput.value || dateInput.value || descriptionInput.value;
-  if (checkFormInputForValues) {
+openTaskFormBtn.addEventListener("click", () =>
+  taskForm.classList.toggle("hidden")
+);
+
+closeTaskFormBtn.addEventListener("click", () => {
+  const formInputsContainValues = titleInput.value || dateInput.value || descriptionInput.value;
+  const formInputValuesUpdated = titleInput.value !== currentTask.title || dateInput.value !== currentTask.date || descriptionInput.value !== currentTask.description;
+
+  if (formInputsContainValues && formInputValuesUpdated) {
     confirmCloseDialog.showModal();
   } else {
     reset();
   }
-}); // when the close button is clicked, the modal appears to cancel or discard changes. if there are no values in the fields, the task form will simply close.
+});
 
-cancelBtn.addEventListener("click", () => confirmCloseDialog.close()); // in the confirm modal, this will close the modal so the user can continue editing
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
-  taskForm.classList.toggle("hidden")
-}); // in the confirm modal, the modal and task form will be closed
+  reset()
+});
 
 taskForm.addEventListener("submit", (e) => {
-  e.preventDefault();// the preventDefault method stops the browser from refreshing when the form is submitted.
-  const dataArrIndex = taskData.findIndex((item) => item.id === currentTask.id); // This checks if the taskData exists already. The findindex array method finds and returns the index of the first element in an array that meets the criteria in the callback function. In this function, the id properties of 'item' and 'currentTask' are compared.
-  const taskObj = {
-    id: `${titleInput.value.toLowerCase().split(' ').join('-')}-${Date.now()}`,  // saved the title value in lower case. the split and join methods turn the value a hyphenated string. the value is wrapped in an embedded expression and template strings. The Date.now method returns the number of milliseconds elapsed since 'January 1, 1970 00:00:00 UTC', added to the end of the string to make the ID unique.
-    title: titleInput.value,
-    date: dateInput.value,
-    description: descriptionInput.value    
-  }; // when a user creates a task, it is saved in this object
-  
-  if (dataArrIndex === -1) {
-    taskData.unshift(taskObj); // checks if the task already exists. if not, then the unshift method is used to add the new task to the beginning of the taskData array
-  };
+  e.preventDefault();
 
-  taskData.forEach(({id,  title, date, description}) => {
-    tasksContainer.innerHTML += `
-        <div class="task" id="${id}"></div>
-        <p><strong>Title: </strong>${title}</p>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Description:</strong> ${description}</p>
-        <button type="button" class="btn">Edit</button>
-        <button type="button" class="btn">Delete</button>
-    ` // create a new div with the new task data with the unique id
-  }
-);
-
-reset();
-
+  addOrUpdateTask();
 });
