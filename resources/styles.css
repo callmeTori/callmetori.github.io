@@ -136,14 +136,11 @@ section {
 }
 .category-box {
 	margin: 1em auto;
-    padding: 30px 10px;
-    border-bottom: 1px solid black;
 }
 .card-container {
     /* display: flex;
     justify-content: space-evenly; */
     max-width: 100%;
-    min-height: 300px;
     margin: 0 auto;
     display: grid;
     gap: 1rem;
