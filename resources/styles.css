@@ -27,7 +27,7 @@ main {
 }
 footer {
     display: flex;    
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 70px;
     border-bottom: 1px solid lightgray;
@@ -154,13 +154,8 @@ section {
     gap: 20px;
     padding: 16px;
     background-color: #FF91AF;
-<<<<<<< HEAD
     border-radius: 16px;
     border: 1px solid black;
-=======
-    border-radius: 24px;
-    border: 2px solid black;
->>>>>>> a49fdee4aae42df82538adca7537b2f6b48ebb88
 }
 /*
 
