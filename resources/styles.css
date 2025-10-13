@@ -144,7 +144,8 @@ section {
 .project-card {
     padding: 16px;
     background-color: #FF91AF;
-    border-radius: 24px;
+    border-radius: 16px;
+    border: 1px solid black;
 }
 /*
 
