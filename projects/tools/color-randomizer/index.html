@@ -13,22 +13,29 @@
     box-sizing: border-box;
 }
 body {
-    text-align: center;
-    font-family: sans-serif;
+    font-family: Tahoma, sans-serif;
+    background-color: lightblue;
+    color: black;
 }
-main {  
-    margin: 15px 0 25px;
-    font-size: 1em;
+.container {
+    width: 100%;
+    min-height: 100vh;
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 h1 {
-    font-size: 1.5em;
-}
-main p {
-    font-size: 2em;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 button {
-    margin: 12px 0;
-    padding: 24px;
+    padding: 8px 16px;
     text-transform: uppercase;
     font-weight: bold;
     border-radius: 16px;
@@ -40,9 +47,34 @@ div {
     max-width: 600px;
     margin: 0 auto;
     padding: 24px;
-    background-color: hsla(240, 13%, 6%, 0.5);
     color: white;
     border-radius: 12px;
+}
+#hex-text-code {
+    font-size: 1.5rem;
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: min(100vw, 450px);
+    min-height: 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 6px 6px black;    background-color: hsla(240, 13%, 6%, 0.5);
+
 }
 #return-link a {
     background-color: hsla(0, 100%, 99%, 0.705);
@@ -52,15 +84,13 @@ div {
     </style>
 </head>
 <body>
-<main>
-    <div>
-    <h1>Random Color Generator</h1>
-    <section>
-    <p><strong>Hex Code:</strong> <span id="hex-text-code">#FF91AF</span></p>
-    </section>
-    <button class="btn" id="btn">Generate New Color</button>
+    <div class="container">
+        <section class="box">
+            <h1>Random Color Generator</h1>
+            <p><strong>Hex Code:</strong> <br><span id="hex-text-code">#FF91AF</span></p>
+            <button class="btn" id="btn">Generate New Color</button>
+        </section>
     </div>
-</main>
     <p id="return-link"><a href="https://callmetori.github.io/index.html">&#8617; Back to callmetori.github.io</a></p>
 <script>
 const body = document.querySelector("body");

@@ -16,8 +16,14 @@ header {
     align-items: center;
     height: 70px;
     background-color: white;
-    border-bottom: 1px solid lightgray;
     padding-inline: 15% 15.42%;
+}
+main {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 footer {
     display: flex;    
@@ -66,20 +72,24 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 130px;
-    background-color: white;
 }
 button {
     font-size: 12px;
     padding: 14px;
     border-radius: 12px;
-    border-width: 0;
     font-weight: normal;
-    background-color: black;
-    color: white;
 }
 button:hover {
     cursor: pointer;
+}
+.primary-btn {
+    background-color: black;
+    color: white;
+}
+.secondary-btn {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
 }
 .hero-landing a:link, a:visited {
     font-size: 12px;
@@ -111,20 +121,20 @@ li {
     text-align: center;
 }
 section {
-    padding: 40px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 65px;
-    padding: 80px 10px;
     width: 100%;
+}
+.full-width {
+    display: flex;
+    justify-content: space-around;
 }
 .padding-10 {
     padding: 10px;
 }
 .category-box {
-    max-width: 1200px;
 	margin: 1em auto;
     padding: 30px 10px;
     border-bottom: 1px solid black;
@@ -142,10 +152,18 @@ section {
   .card-container { grid-template-columns: repeat(2, 1fr); }
 }
 .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 16px;
     background-color: #FF91AF;
+<<<<<<< HEAD
     border-radius: 16px;
     border: 1px solid black;
+=======
+    border-radius: 24px;
+    border: 2px solid black;
+>>>>>>> a49fdee4aae42df82538adca7537b2f6b48ebb88
 }
 /*
 
