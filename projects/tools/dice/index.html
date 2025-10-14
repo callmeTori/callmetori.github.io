@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d6 Dice Roll</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+     <style>
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #cb7f10;
+    box-sizing: border-box;
+}
+.roll-button {
+    margin: auto;
+}
+button {
+    padding: 15px 10px;
+    color: #000;
+    text-shadow: 1px 1px 1px 1px #efefef;
+    background-color: #f4d35e;
+    border: none;
+    border-radius: 14px; 
+    box-shadow: 1px 3px #50514F;
+    outline: none;
+    transition: .3s; 
+}
+button:hover {
+    cursor: pointer;
+    outline: none;
+}
+button:active {
+    background: white;
+    transform: translateY(1px); 
+    box-shadow: none;
+}
+#game {
+    width: auto;
+    height: 100%; 
+}
+.silkscreen-bold {
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h2 {
+    font-size: 18px;
+    padding: 16px;
+}
+#results-message {
+    padding: 4px 0;
+    font-size: 64px;
+}
+.container {
+    position: relative;
+    display: inline-block;
+    margin: 12px;
+}
+.dice {
+    position: relative;
+    font-size: 24px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: black;
+}
+</style>
+</head>
+<body>
+    <div id="game">
+        <div id="dice-tray" class="silkscreen-bold">
+            <h2>d6 Dice Roll</h2>
+            <div id="roll" class="roll-button">
+                <button class="silkscreen-bold">Roll the d6</button>
+            </div>
+            <div class="container">
+                <div id="dice1" class="dice dice-one">
+                <div id="results-message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const diceOne = document.getElementById("dice1");
+        const getResults = document.getElementById("roll");
+        const resultsMsg = document.getElementById("results-message");
+        getResults.addEventListener("click", rollDice);
+
+        function rollDice () {
+            const diceOneResult = Math.floor((Math.random() * 6) + 1);
+            console.log(diceOneResult);
+            resultsMsg.innerText = `${diceOneResult}`;
+        }
+
+    </script>
+</body>
+</html>
