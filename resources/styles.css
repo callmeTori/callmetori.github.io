@@ -87,12 +87,6 @@ button {
 button:hover {
     cursor: pointer;
 }
-button:active {
-    background-color: white;
-    color: black;
-    transform: translateY(1px); 
-    box-shadow: none;
-}
 .primary-btn {
     background-color: black;
     color: white;
@@ -102,6 +96,13 @@ button:active {
     border: 1px solid black;
     color: black;
 }
+button:active {
+    background-color: #3d433f;
+    color: white;
+    transform: translateY(1px); 
+    box-shadow: none;
+}
+/* 
 .hero-landing a:link, a:visited {
     font-size: 12px;
     padding: 14px;
@@ -113,6 +114,7 @@ button:active {
     background-color: black;
     color: white;
 }
+    */
 h2 {
     margin: 24px 0 0 0;
 }
