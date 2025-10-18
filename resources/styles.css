@@ -3,19 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --black: #030303;
+    --white: #efefef;
+    --pink: #FF91AF;
+    --green: #195f1e;
+}
 body {
     font-family: sans-serif;
     width: 100%;
     margin: 0 auto;
-    background-color: white;
-    color: black;
+    background-color: var(--white);
+    color: var(--black);
 }
 header {
     display: flex;    
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background-color: white;
+    background-color: var(--white);
     padding-inline: 15% 15.42%;
 }
 main {
@@ -37,7 +44,7 @@ footer {
     text-align: center;
 }
 .pink-bg {
-    background-color: #FF91AF;
+    background-color: var(--pink);
 }
 .gray-bg {
     background-color:lightgray;
