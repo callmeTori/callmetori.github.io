@@ -19,7 +19,7 @@ body {
 }
 header {
     display: flex;    
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 70px;
     background-color: var(--white);
@@ -151,8 +151,8 @@ section {
     display: flex;
     justify-content: space-around;
 }
-.padding-10 {
-    padding: 10px;
+.padding-16 {
+    padding: 16px;
 }
 .category-box {
 	margin: 1em auto;
@@ -199,7 +199,6 @@ section {
     background-color: #FF91AF;
     border-radius: 24px;
 }
-*/
 .dark-mode {
     background-color: black ;
     color: white;
@@ -229,8 +228,10 @@ section {
 }
 .dark-mode .project-card {
     color: black;
-}
-/* .project-card ul {
+}  
+*/
+/* 
+.project-card ul {
     display: flex;
     justify-content: space-between;
 }
