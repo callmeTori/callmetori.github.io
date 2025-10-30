@@ -4,21 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good morning</title>
+    <style>
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+}
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+    </style>
 </head>
 <body>
+    <h1>Good morning!</h1>
     <section>
         <!-- weather display -->
     </section>
     <section>
         <!-- idea drop off form field and button -->
+        <div class="content-block">
+        <h2>Drop Box for Ideas</h2>
+        </div>
+        <div class="container">
+            <input></input>
+            <button>Submit</button>
+        </div>
          <!-- link to backlog list -->
+        <div class="content-block">
+            <a href="#ideas"></a>
+        </div>
     </section>
     <section>
         <!-- routine checklist -->
+        <div class="content-block">
+        <h2>AM</h2>
+        </div>
         <!-- morning exercise videos -->
+        <div class="content-block">
+        <h2>Get the blood flowing</h2>
+        </div>
+        <div class="video-container">
+         <iframe id="video-iframe" frameborder="0" src="https://www.youtube.com/embed/XrEH5JLljDI?si=80o4ZP-HBo3QptuW" title="Radio Taiso WorkOut I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+         </div>
     </section>
-    <section>
+    <section id="ideas">
         <!-- idea list -->
+         <div class="content-block" style="background-color: pink">
+            <h2>Idea List</h2>
+            <p>This section should populate with a list of the ideas submitted above.</p>
+         </div>
     </section>
 </body>
 </html>
