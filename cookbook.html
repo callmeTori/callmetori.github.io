@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +9,15 @@
             display: grid;  
             gap: 12px;
         }
+        .jc-style {
+            padding:10%;
+        }
         .jc-style .container {
             grid-template-columns: 40% 60%;
+        }
+        .jc-style .container p {
+            margin: 0;
+            padding: 0;
         }
         .recipe-card {
             border-top: 4px solid black;
@@ -32,8 +38,38 @@
     <main>
         <section>
             <h2>Recipes</h2>
-            <div class="recipe-card">
+            <div class="recipe-card jc-style" id="challah-bread">
                 <h3>Challah Bread, 1 lb loaf</h3>
+                <div class="container width-600 center">
+                    <div>1/2 cup Water, room temperature<br>4 tbsp Unsalted butter, room temp, cut into 1/2 inch pieces<br>1 Large egg, room temp<br>3/4 tsp Kosher salt<br>2 1/2 tbsp Granulated sugar<br>2 1/4 cups bread flour<br>1 1/4 tsp bread machine yeast
+                    </div>
+                    <div>
+                        <p>Put all ingredients, in the order listed, into the bread machine pan. Start the dough setting. This should take around 1 hour and 30 minutes.</p>
+                        <p>Remove the dough from the bread machine and place on a baking sheet with parchment paper with some flour.</p>
+                        <p>Stretch the bread out into a square and let the dough sit for 10 minutes to allow the yeast to
+                        settle.</p>
+                        <p>Slice the dough into 3 evenly-sized pieces.</p>
+                        <p>Stretch and pull each piece into 13” long pieces and place side by side.</p>
+                        <p>Braid the pieces.</p>
+                        <p>Proof your braid for about 45 minutes.</p>
+                    </div>
+                    <div>
+                        1 Egg<br>
+                        2 tbsp water
+                    </div>
+                    <div>
+                        <p>Prepare your egg wash. Grab the 1 egg and separate the white and the yolk. Mix the yolk with about 2 tablespoons of water.</p>
+                    </div>
+                    <div>
+                        Optional: Sea salt and sesame seeds.
+                    </div>
+                    <div>
+                        <p>After your dough is proofed, use a brush to coat the loaf with your egg wash. Get all the crevices! Optional: Add any additional topping, like sea salt and sesame seeds.</p>
+                        <p>Bake in the oven at 375° F for 25 minutes.</p>
+                        <p>Tap test! The bread will be a golden brown and the real test is tapping the top of the loaf. You should hear a hollow sound. Enjoy!</p>
+                    </div>
+                </div>
+                <!--
                 <div class="ingredients">
                     <h4>Ingredients</h4>
                     <table style="border: 1px solid black;">
@@ -99,6 +135,7 @@
                         should hear a hollow sound. Enjoy!</li>
                     </ol>
                 </div>
+                -->
             </div>
             <div class="recipe-card jc-style" id="apple-hand-pies">
                 <h3>Apple Hand Pies</h3>
