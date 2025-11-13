@@ -6,6 +6,144 @@
     <title>Good morning</title>
     <!-- <link rel="stylesheet" href="projects/tools/styles.css"> -->
     <style>
+:root {
+    --black: #15151c;
+    --white: #efefef;
+    --pink: #FF91AF;
+}   
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-app {
+    background-color: var(--white);
+    width: 300px;
+    min-height: 400px;
+    border: 5px solid var(--pink);
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn {
+  cursor: pointer;
+  width: 80px;
+  margin: 10px;
+  color: var(--dark-grey);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#FF91AF, #e1879f);
+  border-color: var(--pink);
+  border-width: 3px;
+  border-radius: 12px;
+}
+.btn:hover {
+  background-image: linear-gradient(#FF91AF, #bb6a80);
+}
+.large-btn {
+  width: 70%;
+  padding: 14px;
+  font-size: 20px;
+  align-self: center;
+  justify-self: center;
+}
+.close-task-form-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-icon {
+  width: 20px;
+  height: 20px;
+}
+.task-form {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 15px;
+  width: 300px;
+  
+  height: 350px;
+  
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7); /* Large spread for overlay effect */
+
+}
+.task-form-header {
+  display: flex;
+  justify-content: flex-end;
+}
+.task-form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.task-form-footer {
+  display: flex;
+  justify-content: center;
+}
+.task-form-label,
+#title-input,
+#date-input,
+#description-input {
+  display: block;
+}
+.task-form-label {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+#title-input,
+#date-input,
+#description-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+#confirm-close-dialog {
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 15px;
+}
+.confirm-close-dialog-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.discard-message-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+#tasks-container {
+  height: 100%;
+  overflow-y: auto;
+}
+.task {
+  margin: 5px 0;
+}
+.hidden {
+  display: none;
+}
 .video-container {
     position: relative;
     width: 100%;
@@ -23,7 +161,10 @@
     </style>
 </head>
 <body>
+    <header>
     <h1>Good morning!</h1>
+    </header>
+    <main>
     <section>
         <!-- weather display -->
     </section>
@@ -32,16 +173,44 @@
         <div class="content-block">
         <h2>Drop Box for Ideas</h2>
         </div>
-        <div class="container">
-            <input></input>
-            <button>Submit</button>
-        </div>
         <!-- Container and input for adding new todos -->
-        <div id="container" class="header">
-            <h2>To Do</h2>
-            <input type="text" id="newInput" placeholder="Verb the noun...">
-            <span onclick="newTodo()" class="addBtn">Add</span>
+        <div class="todo-app">
+    <button id="open-task-form-btn" class="btn large-btn">
+    Add New Task
+    </button>
+    <form class="task-form hidden" id="task-form">
+    <div class="task-form-header">
+        <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close">
+        <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"><path fill="#F44336" d="M21.5 4.5H26.501V43.5H21.5z" transform="rotate(45.001 24 24)" /><path fill="#F44336" d="M21.5 4.5H26.5V43.501H21.5z" transform="rotate(135.008 24 24)" /></svg>
+        </button>
+    </div>
+    <div class="task-form-body">
+        <label class="task-form-label" for="title-input">Title</label>
+        <input required type="text" class="form-control" id="title-input" value="" />
+        <label class="task-form-label" for="date-input">Date</label>
+        <input type="date" class="form-control" id="date-input" value="" />
+        <label class="task-form-label" for="description-input">Description</label>
+        <textarea class="form-control" id="description-input" cols="30" rows="5"></textarea>
+    </div>
+    <div class="task-form-footer">
+        <button id="add-or-update-task-btn" class="btn large-btn" type="submit">
+        Add Task
+        </button>
+    </div>
+    </form>
+    <dialog id="confirm-close-dialog">
+    <form method="dialog">
+        <p class="discard-message-text">Discard unsaved changes?</p>
+        <div class="confirm-close-dialog-btn-container">
+        <button id="cancel-btn" class="btn">
+            Cancel
+        </button>
+        <button id="discard-btn" class="btn">
+            Discard
+        </button>
         </div>
+    </form>
+    </dialog>
          <!-- link to backlog list -->
         <div class="content-block">
             <a href="#ideas"></a>
@@ -65,17 +234,11 @@
          <div class="content-block" style="background-color: pink">
             <h2>Idea List</h2>
             <p>This section should populate with a list of the ideas submitted above.</p>
-            <!-- Working list -->
-            <ul id="list">
-                <li>wash the dishes</li>
-                <li class="checked">mop the floor</li>
-                <li>get groceries</li>
-                <li>tidy the office</li>
-                <li>walk the dog</li>
-            </ul>
+            <!-- Working list --> 
+            <div id="tasks-container"></div>
          </div>
     </section>
+    </main>
 </body>
-    <script src="projects/tools/todo/script.js"></script>
-    <script>alert("hello, world!")</script>
+    <script src="resources/scripts/taskmanager.js"></script>
 </html>
